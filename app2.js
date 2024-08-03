@@ -1,12 +1,27 @@
 // app2.js
-const express = require('express');
+
+import express from "express";
+import cors from "cors";
+import records from "./routes/record.js";
+
+const PORT = process.env.PORT || 4001;
 const app = express();
-const port = 4001;
 
-app.get('/', (req, res) => {
-    res.send('Hello from Express App 2');
+app.use(cors());
+app.use(express.json());
+app.use("/record", records);
+
+// start the Express server
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
 
-app.listen(port, () => {
-    console.log(`Express App 2 is running on http://localhost:${port}`);
-});
+// // Redirect start page
+// app.get("/", (req, res) => {
+//   res.redirect("/app2");
+//   // res.send('hello world');
+// });
+
+// app.get('/app2', (req, res) => {
+//     res.send('Hello from Express App 2');
+// });
