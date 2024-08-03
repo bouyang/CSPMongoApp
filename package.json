@@ -5,7 +5,7 @@
   "main": "app2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app2.js"
+    "start": "nodemon app2be.js"
   },
   "author": "",
   "license": "ISC",
